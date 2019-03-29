@@ -13,3 +13,13 @@ if sys.version_info[0] == 3:
 else:
     string_types = (basestring,)  # noqa
     text_type = unicode  # noqa
+
+def text_to_unicode(text):
+    """
+    input: text: arbitrary string
+    return: unicode text
+    """
+    if PY2:
+        return text_type(text, 'utf-8')
+    else:
+        return text_type(text)

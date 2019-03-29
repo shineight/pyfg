@@ -117,7 +117,7 @@ class FortiOS(object):
         if isinstance(data, int):
             data = chr(data)
         # Ensure unicode
-        return py23_compat.text_type(data)
+        return data
 
     def execute_command(self, command):
         """
@@ -148,9 +148,9 @@ class FortiOS(object):
 
         error = ''
         output = ''
-        for e in error_chan.read():
+        for e in py23_compat.text_to_unicode(error_chan.read()):
             error = error + self._read_wrapper(e)
-        for o in output_chan.read():
+        for o in py23_compat.text_to_unicode(output_chan.read()):
             output = output + self._read_wrapper(o)
 
         if len(error) > 0:
