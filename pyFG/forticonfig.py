@@ -268,7 +268,7 @@ class FortiConfig(object):
             - **value** (string): Value you want to set
         """
 
-        self.parameters[param] = str(value)
+        self.parameters[param] = value
 
     def del_param(self, param):
         """
