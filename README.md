@@ -1,4 +1,4 @@
-PyFG
+PyFG Test
 ====
 
 PyFG is a Python (2.7 tested, may work on other versions) package.
